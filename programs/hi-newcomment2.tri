@@ -7,5 +7,5 @@ another new comment
 $
 
 begin
- put('H'); put('i'); put('!')
+ put('H'); put('i'); put('!'); put('2')
 end

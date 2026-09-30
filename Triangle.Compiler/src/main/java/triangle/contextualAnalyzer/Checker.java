@@ -33,13 +33,7 @@ import triangle.abstractSyntaxTrees.aggregates.MultipleArrayAggregate;
 import triangle.abstractSyntaxTrees.aggregates.MultipleRecordAggregate;
 import triangle.abstractSyntaxTrees.aggregates.SingleArrayAggregate;
 import triangle.abstractSyntaxTrees.aggregates.SingleRecordAggregate;
-import triangle.abstractSyntaxTrees.commands.AssignCommand;
-import triangle.abstractSyntaxTrees.commands.CallCommand;
-import triangle.abstractSyntaxTrees.commands.EmptyCommand;
-import triangle.abstractSyntaxTrees.commands.IfCommand;
-import triangle.abstractSyntaxTrees.commands.LetCommand;
-import triangle.abstractSyntaxTrees.commands.SequentialCommand;
-import triangle.abstractSyntaxTrees.commands.WhileCommand;
+import triangle.abstractSyntaxTrees.commands.*;
 import triangle.abstractSyntaxTrees.declarations.BinaryOperatorDeclaration;
 import triangle.abstractSyntaxTrees.declarations.ConstDeclaration;
 import triangle.abstractSyntaxTrees.declarations.ConstantDeclaration;
@@ -184,6 +178,12 @@ public final class Checker implements ActualParameterVisitor<FormalParameter, Vo
 
 		checkAndReportError(eType.equals(StdEnvironment.booleanType), "Boolean expression expected here", ast.E);
 		ast.C.visit(this);
+
+		return null;
+	}
+
+	@Override
+	public Void visitRepeatCommand(RepeatCommand ast, Void arg) {
 
 		return null;
 	}
@@ -932,6 +932,8 @@ public final class Checker implements ActualParameterVisitor<FormalParameter, Vo
 				StdEnvironment.booleanType);
 		StdEnvironment.notlessDecl = declareStdBinaryOp(">=", StdEnvironment.integerType, StdEnvironment.integerType,
 				StdEnvironment.booleanType);
+		StdEnvironment.barDecl = declareStdBinaryOp("|", StdEnvironment.integerType, StdEnvironment.integerType,
+				StdEnvironment.integerType);
 
 		StdEnvironment.charDecl = declareStdType("Char", StdEnvironment.charType);
 		StdEnvironment.chrDecl = declareStdFunc("chr",
