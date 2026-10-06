@@ -55,7 +55,7 @@ final class Token {
 
 		// reserved words - keep in alphabetical order for ease of maintenance...
 		ARRAY("array"), BEGIN("begin"), CONST("const"), DO("do"), ELSE("else"), END("end"), FUNC("func"), IF("if"), IN("in"), LET("let"), OF("of"),
-		PROC("proc"), RECORD("record"), REPEAT("repeat"), THEN("then"), TYPE("type"),UNTIL("until"), VAR("var"), WHILE("while"),
+		PROC("proc"), RECORD("record"), REPEAT("repeat"), THEN("then"), TYPE("type"),UNTIL("until"), VAR("var"), WHILE("while"), INCREMENT("++"), //Practical 3 bonus
 
 		// punctuation...
 		DOT("."), COLON(":"), SEMICOLON(";"), COMMA(","), BECOMES(":="), IS("~"),
@@ -66,7 +66,9 @@ final class Token {
 		//end of P2.2 task, add | operator
 		PIPE("|"),
 		// special tokens...
-		EOT(""), ERROR("<error>");
+		EOT(""), ERROR("<error>"),
+		//Practical 3 bonus
+	INCREMENTS("++");
 		
 	    public final String spelling;
 		

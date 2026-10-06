@@ -187,6 +187,11 @@ public final class Scanner {
 		case '%':
 		case '^':
 		case '?':
+			//Practical 3 bonus
+		 while (currentChar == '+' && currentChar ==  '+') {
+			takeIt();
+			return Token.Kind.OPERATOR;}
+
             takeIt();
 			while (isOperator(currentChar))
 				takeIt();
