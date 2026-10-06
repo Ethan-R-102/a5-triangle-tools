@@ -178,6 +178,7 @@ public final class Scanner {
 		case '-':
 		case '*':
 		case '/':
+		case '|':
 		case '=':
 		case '<':
 		case '>':
@@ -253,10 +254,6 @@ public final class Scanner {
 		case '}':
 			takeIt();
 			return Token.Kind.RCURLY;
-
-		case '|':
-			takeIt();
-			return Token.Kind.PIPE;
 
 		case SourceFile.EOT:
 			return Token.Kind.EOT;

@@ -816,6 +816,14 @@ public class Parser {
 
 		switch (currentToken.kind) {
 
+			case BAR: {
+				acceptIt();
+				Expression eAST = parseExpression();
+				accept(Token.Kind.BAR);
+				finish(actualPos);
+				actualAST = new ConstActualParameter(eAST, actualPos);
+			}
+				break;
 		case IDENTIFIER:
 		case INTLITERAL:
 		case CHARLITERAL:

@@ -64,7 +64,7 @@ final class Token {
 		LPAREN("("), RPAREN(")"), LBRACKET("["), RBRACKET("]"), LCURLY("{"), RCURLY("}"),
 
 		//end of P2.2 task, add | operator
-		PIPE("|"),
+		BAR("|"),
 		// special tokens...
 		EOT(""), ERROR("<error>"),
 		//Practical 3 bonus
