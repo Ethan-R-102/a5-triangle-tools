@@ -14,7 +14,7 @@ public class BarPrimitiveRoutine extends RuntimeEntity implements RoutineEntity 
 	}
 
 	public void encodeCall(Emitter emitter, Frame frame) {
-		emitter.emit(/*TODO*/);
+		emitter.emit(OpCode.LOADA, 0, Register.SB, 100);
 		emitter.emit(OpCode.CALL, Register.PB, Primitive.MULT);
 	}
 

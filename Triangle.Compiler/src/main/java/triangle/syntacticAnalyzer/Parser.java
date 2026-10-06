@@ -341,17 +341,6 @@ public class Parser {
 			break;
 
 			// Practical 3: Bonus work, adding incrementation: a++;
-		case INCREMENT: {
-			int incrementPos = currentToken.position.start;
-			acceptIt();
-			Expression eAST = parseExpression();
-			accept(Token.Kind.INCREMENTS);
-			Command cAST = parseSingleCommand();
-			finish(commandPos);
-			commandAST = new IncrementCommand(eAST, cAST, commandPos);
-
-		}
-			break;
 
 
 
